@@ -1,6 +1,0 @@
-data/
-*.pth
-*.pt
-__pycache__/
-*.pyc
-runs/
