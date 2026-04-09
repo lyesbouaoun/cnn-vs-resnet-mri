@@ -1,0 +1,14 @@
+# dataset
+train/
+val/
+
+# ou
+data/
+dataset/
+
+# modèles
+*.pth
+*.pt
+
+# logs
+*.csv
