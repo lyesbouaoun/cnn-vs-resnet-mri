@@ -2,11 +2,12 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 import pandas as pd
+import config
 from sklearn.metrics import confusion_matrix
-import util_dataset
-from cnn_vs_resnet.affichage import affich_graph
-from cnn_vs_resnet.affichage import confus_matrix
-from cnn_vs_resnet.cnn_model import cnn_mod
+from util_dataset import get_dataloaders
+from affichage import affich_graph
+from affichage import confus_matrix
+from cnn_model import cnn_mod
 model=cnn_mod()
 classe = ['glioma', 'meningioma', 'no_tumor', 'pituitary']
 
@@ -18,7 +19,7 @@ scheduler = torch.optim.lr_scheduler.StepLR(
     gamma=0.1
 )
 
-data_train,data_val=util_dataset("train","val")
+data_train,data_val=get_dataloaders ("train","val",config)
 
 train_losses = []
 val_losses = []
